@@ -92,24 +92,3 @@
 | S8 | `B231234508` `{"status":"active","coursesTaken":["CS201"]}` | `CS308` `{"prerequisites":["CS201","CS202"]}` | `{"studentID":"B231234508","courseID":"CS308"}` | 200 | `ERROR_PREREQUISITES` |
 | S9 | `B231234509` `{"status":"active","coursesTaken":[]}` | `CS309` `{"prerequisites":[]}` | `{"studentID":"B231234509","courseID":"CS309"}` | 201 | `OK` |
 | S10 | — | — | `{"studentID":"B231234510"}` | 400 | `ERROR_BAD_REQUEST` |
-
-**Анхаарах:** S3, S4, S7-д "PUT хийхгүй" гэсэн ID-г өөр ямар ч тестэд setup хийж болохгүй.
-
-Oracle-ийн загвар (Лекц 5, слайд 36):
-
-```javascript
-pm.test("<ойлгомжтой нэр>", function () {
-    pm.response.to.have.status(<статус>);
-    pm.expect(pm.response.json().result).to.eql("<result>");
-});
-```
-
-Happy path-д `registrationID`-ийн яг утгыг шалгахгүй, зөвхөн тоо байгаа эсэхийг шалгана. Сервер ажиллах хугацаанд ID хуримтлагддаг.
-
----
-
-## Даалгавар 3-5 (дараа нь бөглөнө)
-
-- Collection: `lab05-collection.json`
-- Newman үр дүн: `results/newman-pass.txt`, `results/newman-fail.txt`, `results/newman-down.txt`
-- Тестийн тоо (Newman `assertions executed`): _бөглөнө_
