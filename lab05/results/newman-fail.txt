@@ -1,0 +1,146 @@
+newman
+
+Lab05
+
+❏ Task1_Dulaaral
+↳ Setup: идэвхтэй оюутан B231234567
+  PUT http://localhost:3000/students/B231234567 [200 OK, 178B, 18ms]
+
+↳ Setup: CS313 хичээл (урьдач CS201)
+  PUT http://localhost:3000/courses/CS313 [200 OK, 178B, 2ms]
+
+↳ Амжилттай бүртгэл
+  POST http://localhost:3000/registrations [201 Created, 203B, 1ms]
+  1. Амжилттай бүртгэл: статус 201
+  ✓  Амжилттай бүртгэл: result = OK
+
+❏ S1_HappyPath
+↳ Setup: оюутан B231234501
+  PUT http://localhost:3000/students/B231234501 [200 OK, 178B, 1ms]
+
+↳ Setup: хичээл CS301
+  PUT http://localhost:3000/courses/CS301 [200 OK, 178B, 2ms]
+
+↳ Хэвийн бүртгэл амжилттай бүртгэгдэнэ
+  POST http://localhost:3000/registrations [201 Created, 203B, 2ms]
+  ✓  Хэвийн бүртгэл амжилттай бүртгэгдэнэ: статус 201
+  ✓  Хэвийн бүртгэл амжилттай бүртгэгдэнэ: result = OK
+  ✓  Хэвийн бүртгэл амжилттай бүртгэгдэнэ: registrationID тоо байна
+
+❏ S2_InactiveStudent
+↳ Setup: оюутан B231234502
+  PUT http://localhost:3000/students/B231234502 [200 OK, 178B, 2ms]
+
+↳ Setup: хичээл CS302
+  PUT http://localhost:3000/courses/CS302 [200 OK, 178B, 2ms]
+
+↳ Идэвхгүй оюутан бүртгүүлэхэд ERROR_INACTIVE_STUDENT
+  POST http://localhost:3000/registrations [200 OK, 198B, 2ms]
+  ✓  Идэвхгүй оюутан бүртгүүлэхэд ERROR_INACTIVE_STUDENT: статус 200
+  ✓  Идэвхгүй оюутан бүртгүүлэхэд ERROR_INACTIVE_STUDENT: result = ERROR_INACTIVE_STUDENT
+
+❏ S3_NoStudent
+↳ Setup: хичээл CS303
+  PUT http://localhost:3000/courses/CS303 [200 OK, 178B, 2ms]
+
+↳ Байхгүй оюутан бүртгүүлэхэд ERROR_NO_STUDENT
+  POST http://localhost:3000/registrations [200 OK, 192B, 1ms]
+  ✓  Байхгүй оюутан бүртгүүлэхэд ERROR_NO_STUDENT: статус 200
+  ✓  Байхгүй оюутан бүртгүүлэхэд ERROR_NO_STUDENT: result = ERROR_NO_STUDENT
+
+❏ S4_NoCourse
+↳ Setup: оюутан B231234504
+  PUT http://localhost:3000/students/B231234504 [200 OK, 178B, 2ms]
+
+↳ Байхгүй хичээлд бүртгүүлэхэд ERROR_NO_COURSE
+  POST http://localhost:3000/registrations [200 OK, 191B, 2ms]
+  ✓  Байхгүй хичээлд бүртгүүлэхэд ERROR_NO_COURSE: статус 200
+  ✓  Байхгүй хичээлд бүртгүүлэхэд ERROR_NO_COURSE: result = ERROR_NO_COURSE
+
+❏ S5_PrereqMissing
+↳ Setup: оюутан B231234505
+  PUT http://localhost:3000/students/B231234505 [200 OK, 178B, 2ms]
+
+↳ Setup: хичээл CS305
+  PUT http://localhost:3000/courses/CS305 [200 OK, 178B, 2ms]
+
+↳ Урьдач хангаагүй үед ERROR_PREREQUISITES
+  POST http://localhost:3000/registrations [200 OK, 215B, 1ms]
+  ✓  Урьдач хангаагүй үед ERROR_PREREQUISITES: статус 200
+  ✓  Урьдач хангаагүй үед ERROR_PREREQUISITES: result = ERROR_PREREQUISITES
+
+❏ S6_Double_Inactive_Prereq
+↳ Setup: оюутан B231234506
+  PUT http://localhost:3000/students/B231234506 [200 OK, 178B, 2ms]
+
+↳ Setup: хичээл CS306
+  PUT http://localhost:3000/courses/CS306 [200 OK, 178B, 1ms]
+
+↳ Давхар алдаа: идэвхгүй оюутан + урьдач дутуу
+  POST http://localhost:3000/registrations [200 OK, 198B, 2ms]
+  ✓  Давхар алдаа: идэвхгүй оюутан + урьдач дутуу: статус 200
+  ✓  Давхар алдаа: идэвхгүй оюутан + урьдач дутуу: result = ERROR_INACTIVE_STUDENT
+
+❏ S7_Double_NoStudent_NoCourse
+↳ Давхар алдаа: байхгүй оюутан + байхгүй хичээл
+  POST http://localhost:3000/registrations [200 OK, 192B, 2ms]
+  ✓  Давхар алдаа: байхгүй оюутан + байхгүй хичээл: статус 200
+  ✓  Давхар алдаа: байхгүй оюутан + байхгүй хичээл: result = ERROR_NO_STUDENT
+
+❏ S8_Boundary_SomePrereq
+↳ Setup: оюутан B231234508
+  PUT http://localhost:3000/students/B231234508 [200 OK, 178B, 1ms]
+
+↳ Setup: хичээл CS308
+  PUT http://localhost:3000/courses/CS308 [200 OK, 178B, 2ms]
+
+↳ Зарим урьдач хангасан үед ERROR_PREREQUISITES
+  POST http://localhost:3000/registrations [200 OK, 215B, 1ms]
+  ✓  Зарим урьдач хангасан үед ERROR_PREREQUISITES: статус 200
+  ✓  Зарим урьдач хангасан үед ERROR_PREREQUISITES: result = ERROR_PREREQUISITES
+
+❏ S9_Boundary_NoPrereq_EmptyTaken
+↳ Setup: оюутан B231234509
+  PUT http://localhost:3000/students/B231234509 [200 OK, 178B, 1ms]
+
+↳ Setup: хичээл CS309
+  PUT http://localhost:3000/courses/CS309 [200 OK, 178B, 2ms]
+
+↳ Урьдачгүй хичээл, хоосон coursesTaken үед бүртгэл амжилттай
+  POST http://localhost:3000/registrations [201 Created, 203B, 1ms]
+  ✓  Урьдачгүй хичээл, хоосон coursesTaken үед бүртгэл амжилттай: статус 201
+  ✓  Урьдачгүй хичээл, хоосон coursesTaken үед бүртгэл амжилттай: result = OK
+  ✓  Урьдачгүй хичээл, хоосон coursesTaken үед бүртгэл амжилттай: registrationID тоо байна
+
+❏ S10_Boundary_MissingField
+↳ courseID дутуу үед 400 ERROR_BAD_REQUEST
+  POST http://localhost:3000/registrations [400 Bad Request, 202B, 1ms]
+  ✓  courseID дутуу үед 400 ERROR_BAD_REQUEST: статус 400
+  ✓  courseID дутуу үед 400 ERROR_BAD_REQUEST: result = ERROR_BAD_REQUEST
+
+┌─────────────────────────┬─────────────────┬─────────────────┐
+│                         │        executed │          failed │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│              iterations │               1 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│                requests │              27 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│            test-scripts │              11 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│      prerequest-scripts │               0 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│              assertions │              24 │               1 │
+├─────────────────────────┴─────────────────┴─────────────────┤
+│ total run duration: 341ms                                   │
+├─────────────────────────────────────────────────────────────┤
+│ total data received: 635B (approx)                          │
+├─────────────────────────────────────────────────────────────┤
+│ average response time: 2ms [min: 1ms, max: 18ms, s.d.: 3ms] │
+└─────────────────────────────────────────────────────────────┘
+
+[31m  # [39m[31m failure        [39m[31m detail                                                [39m
+[90m    [39m[90m                [39m[90m                                                       [39m
+ 1.  AssertionError  Амжилттай бүртгэл: статус 201                         
+                     expected response to have status code 200 but got 201 
+                     at assertion:0 in test-script                         
+                     inside "Task1_Dulaaral / Амжилттай бүртгэл"           
