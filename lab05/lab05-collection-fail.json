@@ -1,14 +1,11 @@
 {
   "info": {
+    "_postman_id": "d2cfb821-cc6c-4c97-a693-3f245922b84b",
     "name": "Lab05",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44800004",
+    "_collection_link": "https://nursultan-7919712.postman.co/workspace/Nursultan's-Workspace~9773960f-6310-4f91-8bbe-a35250a0d01b/collection/44800004-d2cfb821-cc6c-4c97-a693-3f245922b84b?action=share&source=collection_link&creator=44800004"
   },
-  "variable": [
-    {
-      "key": "baseUrl",
-      "value": "http://localhost:3000"
-    }
-  ],
   "item": [
     {
       "name": "Task1_Dulaaral",
@@ -42,7 +39,8 @@
                 "B231234567"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Setup: CS313 хичээл (урьдач CS201)",
@@ -73,7 +71,8 @@
                 "CS313"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Амжилттай бүртгэл",
@@ -119,7 +118,8 @@
                 "registrations"
               ]
             }
-          }
+          },
+          "response": []
         }
       ]
     },
@@ -155,7 +155,8 @@
                 "B231234501"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Setup: хичээл CS301",
@@ -186,7 +187,8 @@
                 "CS301"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Хэвийн бүртгэл амжилттай бүртгэгдэнэ",
@@ -235,7 +237,8 @@
                 "registrations"
               ]
             }
-          }
+          },
+          "response": []
         }
       ]
     },
@@ -271,7 +274,8 @@
                 "B231234502"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Setup: хичээл CS302",
@@ -302,7 +306,8 @@
                 "CS302"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Идэвхгүй оюутан бүртгүүлэхэд ERROR_INACTIVE_STUDENT",
@@ -348,7 +353,8 @@
                 "registrations"
               ]
             }
-          }
+          },
+          "response": []
         }
       ]
     },
@@ -384,7 +390,8 @@
                 "CS303"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Байхгүй оюутан бүртгүүлэхэд ERROR_NO_STUDENT",
@@ -430,7 +437,8 @@
                 "registrations"
               ]
             }
-          }
+          },
+          "response": []
         }
       ]
     },
@@ -466,7 +474,8 @@
                 "B231234504"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Байхгүй хичээлд бүртгүүлэхэд ERROR_NO_COURSE",
@@ -512,7 +521,8 @@
                 "registrations"
               ]
             }
-          }
+          },
+          "response": []
         }
       ]
     },
@@ -548,7 +558,8 @@
                 "B231234505"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Setup: хичээл CS305",
@@ -579,7 +590,8 @@
                 "CS305"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Урьдач хангаагүй үед ERROR_PREREQUISITES",
@@ -625,7 +637,8 @@
                 "registrations"
               ]
             }
-          }
+          },
+          "response": []
         }
       ]
     },
@@ -661,7 +674,8 @@
                 "B231234506"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Setup: хичээл CS306",
@@ -692,7 +706,8 @@
                 "CS306"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Давхар алдаа: идэвхгүй оюутан + урьдач дутуу",
@@ -738,7 +753,8 @@
                 "registrations"
               ]
             }
-          }
+          },
+          "response": []
         }
       ]
     },
@@ -789,7 +805,8 @@
                 "registrations"
               ]
             }
-          }
+          },
+          "response": []
         }
       ]
     },
@@ -825,7 +842,8 @@
                 "B231234508"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Setup: хичээл CS308",
@@ -856,7 +874,8 @@
                 "CS308"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Зарим урьдач хангасан үед ERROR_PREREQUISITES",
@@ -902,7 +921,8 @@
                 "registrations"
               ]
             }
-          }
+          },
+          "response": []
         }
       ]
     },
@@ -938,7 +958,8 @@
                 "B231234509"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Setup: хичээл CS309",
@@ -969,7 +990,8 @@
                 "CS309"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Урьдачгүй хичээл, хоосон coursesTaken үед бүртгэл амжилттай",
@@ -1018,7 +1040,8 @@
                 "registrations"
               ]
             }
-          }
+          },
+          "response": []
         }
       ]
     },
@@ -1069,9 +1092,16 @@
                 "registrations"
               ]
             }
-          }
+          },
+          "response": []
         }
       ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
     }
   ]
 }

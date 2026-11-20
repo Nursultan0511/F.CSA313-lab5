@@ -1,0 +1,46 @@
+{
+  "info": {
+    "name": "Lab05-Task5",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Нийтийн API: хэрэглэгчдийн жагсаалт",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Нийтийн API: статус 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Нийтийн API: хариу массив байна\", function () {",
+              "    pm.expect(pm.response.json()).to.be.an(\"array\");",
+              "});",
+              "pm.test(\"Нийтийн API: эхний хэрэглэгчийн нэр Leanne Graham\", function () {",
+              "    pm.expect(pm.response.json()[0].name).to.eql(\"Leanne Graham\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/users",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "users"
+          ]
+        }
+      }
+    }
+  ]
+}
